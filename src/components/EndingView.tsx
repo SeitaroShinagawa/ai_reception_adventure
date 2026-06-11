@@ -29,19 +29,12 @@ function getRank(score: number): RankInfo {
     bg: 'rgba(0, 200, 150, 0.15)',
     emoji: '🎉',
   };
-  if (score >= 4) return {
+  return {
     rank: 'B',
     comment: 'まずまずです。もう少し積極的に話題を広げてみましょう。',
     color: '#4A9EFF',
     bg: 'rgba(74, 158, 255, 0.15)',
     emoji: '👍',
-  };
-  return {
-    rank: 'C',
-    comment: '次回はもっと相手への興味を示してみましょう！',
-    color: '#FF7A50',
-    bg: 'rgba(255, 122, 80, 0.15)',
-    emoji: '💪',
   };
 }
 
