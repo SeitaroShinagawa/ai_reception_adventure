@@ -1,4 +1,4 @@
-import { CharacterId, Character } from '../types';
+import { CharacterId } from '../types';
 import { characters } from '../data/characters';
 
 // 重み付き抽選でキャラクターを選ぶ（3人）
