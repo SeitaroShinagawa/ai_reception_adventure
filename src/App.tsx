@@ -1,18 +1,29 @@
 import React, { useCallback, useState } from 'react';
 import { useGameEngine } from './engine/useGameEngine';
+import { TitleView } from './components/TitleView';
 import { SceneView } from './components/SceneView';
 import { FeedbackModal } from './components/FeedbackModal';
 import { EndingView } from './components/EndingView';
 import { characters } from './data/characters';
 
+type Screen = 'title' | 'game';
+
 function App() {
-  const [key, setKey] = useState(0);
+  const [screen, setScreen] = useState<Screen>('title');
+  const [gameKey, setGameKey] = useState(0);
+
+  const handleStart = useCallback(() => setScreen('game'), []);
 
   const handleRestart = useCallback(() => {
-    setKey((k) => k + 1);
+    setGameKey((k) => k + 1);
+    setScreen('title');
   }, []);
 
-  return <Game key={key} onRestart={handleRestart} />;
+  if (screen === 'title') {
+    return <TitleView onStart={handleStart} />;
+  }
+
+  return <Game key={gameKey} onRestart={handleRestart} />;
 }
 
 function Game({ onRestart }: { onRestart: () => void }) {
