@@ -15,21 +15,21 @@ interface RankInfo {
 }
 
 function getRank(score: number): RankInfo {
-  if (score >= 9) return {
+  if (score >= 12) return {
     rank: 'S',
     comment: '完璧な懇親会マスター！誰とでも深い関係を築けました。',
     color: '#FFD700',
     bg: 'rgba(255, 215, 0, 0.15)',
     emoji: '🏆',
   };
-  if (score >= 6) return {
+  if (score >= 8) return {
     rank: 'A',
     comment: '素晴らしい！多くの人と良い関係を築けました。',
     color: '#00C896',
     bg: 'rgba(0, 200, 150, 0.15)',
     emoji: '🎉',
   };
-  if (score >= 3) return {
+  if (score >= 4) return {
     rank: 'B',
     comment: 'まずまずです。もう少し積極的に話題を広げてみましょう。',
     color: '#4A9EFF',
