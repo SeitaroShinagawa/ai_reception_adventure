@@ -7,7 +7,7 @@ export const introScenes: Scene[] = [
     choices: [
       {
         text: '近くにいる人に話しかけてみる',
-        nextSceneId: 'encounter_1',
+        nextSceneId: 'encounter_next',
         scoreChange: 0,
       },
       {
@@ -23,7 +23,7 @@ export const introScenes: Scene[] = [
     choices: [
       {
         text: '話しかけてみる',
-        nextSceneId: 'encounter_1',
+        nextSceneId: 'encounter_next',
         scoreChange: 0,
       },
     ],

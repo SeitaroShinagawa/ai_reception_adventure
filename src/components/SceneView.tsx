@@ -70,7 +70,7 @@ const styles: Record<string, React.CSSProperties> = {
     display: 'flex',
     alignItems: 'flex-end',
     justifyContent: 'center',
-    backgroundImage: 'url(/images/bg_venue.svg)',
+    backgroundImage: `url(${process.env.PUBLIC_URL}/images/bg_venue.svg)`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     minHeight: '300px',

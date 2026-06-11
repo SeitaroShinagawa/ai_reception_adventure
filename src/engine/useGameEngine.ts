@@ -19,7 +19,7 @@ function randomGenders(): Record<CharacterId, Gender> {
 }
 
 export function useGameEngine() {
-  const [initialCharacters] = useState<CharacterId[]>(() => selectCharacters());
+  const [initialCharacters] = useState<CharacterId[]>(selectCharacters);
   const [encounterQueue, setEncounterQueue] = useState<string[]>(() =>
     buildEncounterQueue(initialCharacters)
   );
