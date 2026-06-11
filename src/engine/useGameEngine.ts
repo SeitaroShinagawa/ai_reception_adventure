@@ -60,11 +60,17 @@ export function useGameEngine() {
         setPendingFeedback(choice.feedback);
       }
 
+      // encounter_next への遷移 = キャラクターとの会話終了なので met に追加
+      const currentCharacterId = sceneMap[gameState.currentSceneId]?.characterId;
+      const justMet =
+        choice.nextSceneId === 'encounter_next' && currentCharacterId ? [currentCharacterId] : [];
+
       setEncounterQueue(newQueue);
       setGameState((prev) => ({
         ...prev,
         currentSceneId: sceneId,
         score: prev.score + choice.scoreChange,
+        metCharacters: Array.from(new Set([...prev.metCharacters, ...justMet])),
       }));
     },
     [gameState.currentSceneId, encounterQueue, resolveNextScene]
