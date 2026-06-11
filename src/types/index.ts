@@ -1,11 +1,13 @@
 export type CharacterId = 'professor' | 'junior_faculty' | 'student' | 'engineer';
 
+export type Gender = 'm' | 'f';
+
 export interface Character {
   id: CharacterId;
   name: string;
   affiliation: string;
   description: string;
-  imageUrl: string;
+  imageUrl: (gender: Gender) => string;
   spawnWeight: number; // 出現確率の重み
 }
 
@@ -29,4 +31,5 @@ export interface GameState {
   score: number;
   metCharacters: CharacterId[];
   selectedCharacters: CharacterId[]; // 今回のプレイで出現するキャラクター
+  characterGenders: Record<CharacterId, Gender>; // 各キャラクターの性別（プレイごとにランダム）
 }

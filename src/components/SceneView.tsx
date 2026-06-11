@@ -1,14 +1,15 @@
 import React from 'react';
-import { Scene, Character } from '../types';
+import { Scene, Character, Gender } from '../types';
 
 interface Props {
   scene: Scene;
   character?: Character;
+  gender?: Gender;
   onChoose: (index: number) => void;
   score: number;
 }
 
-export const SceneView: React.FC<Props> = ({ scene, character, onChoose, score }) => {
+export const SceneView: React.FC<Props> = ({ scene, character, gender = 'm', onChoose, score }) => {
   return (
     <div style={styles.container}>
       <div style={styles.scoreBar}>名刺交換スコア: {score}</div>
@@ -17,12 +18,9 @@ export const SceneView: React.FC<Props> = ({ scene, character, onChoose, score }
         {character && (
           <div style={styles.characterArea}>
             <img
-              src={character.imageUrl}
+              src={character.imageUrl(gender)}
               alt={character.name}
               style={styles.portrait}
-              onError={(e) => {
-                (e.target as HTMLImageElement).src = '/images/characters/placeholder.png';
-              }}
             />
             <div style={styles.nameplate}>
               <span style={styles.name}>{character.name}</span>
@@ -72,7 +70,7 @@ const styles: Record<string, React.CSSProperties> = {
     display: 'flex',
     alignItems: 'flex-end',
     justifyContent: 'center',
-    backgroundImage: 'url(/images/bg_venue.jpg)',
+    backgroundImage: 'url(/images/bg_venue.svg)',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     minHeight: '300px',

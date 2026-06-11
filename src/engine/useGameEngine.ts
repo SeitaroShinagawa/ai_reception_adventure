@@ -1,5 +1,6 @@
 import { useState, useCallback } from 'react';
-import { GameState, CharacterId } from '../types';
+import { GameState, CharacterId, Gender } from '../types';
+import { characters } from '../data/characters';
 import { sceneMap } from '../data/scenes';
 import { selectCharacters } from './selectCharacters';
 
@@ -11,20 +12,26 @@ function buildEncounterQueue(characterIds: CharacterId[]): string[] {
   return characterIds.map(getFirstSceneForCharacter);
 }
 
+function randomGenders(): Record<CharacterId, Gender> {
+  return Object.fromEntries(
+    Object.keys(characters).map((id) => [id, Math.random() < 0.5 ? 'm' : 'f'])
+  ) as Record<CharacterId, Gender>;
+}
+
 export function useGameEngine() {
-  const [selectedCharacters] = useState<CharacterId[]>(() => selectCharacters());
+  const [initialCharacters] = useState<CharacterId[]>(() => selectCharacters());
   const [encounterQueue, setEncounterQueue] = useState<string[]>(() =>
-    buildEncounterQueue(selectCharacters())
+    buildEncounterQueue(initialCharacters)
   );
   const [gameState, setGameState] = useState<GameState>({
     currentSceneId: 'intro_1',
     score: 0,
     metCharacters: [],
-    selectedCharacters: [],
+    selectedCharacters: initialCharacters,
+    characterGenders: randomGenders(),
   });
   const [pendingFeedback, setPendingFeedback] = useState<string | null>(null);
 
-  // encounter_next を解決して次のキャラクターまたはエンディングへ
   const resolveNextScene = useCallback(
     (nextSceneId: string, queue: string[]): { sceneId: string; newQueue: string[] } => {
       if (nextSceneId === 'encounter_next') {
@@ -69,7 +76,6 @@ export function useGameEngine() {
 
   return {
     gameState,
-    selectedCharacters,
     currentScene,
     pendingFeedback,
     chooseOption,

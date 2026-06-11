@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 220">
+  <!-- Suit body -->
+  <path d="M0,220 L0,156 C30,145 60,138 70,130 L90,130 C100,138 130,145 160,156 L160,220 Z" fill="#2C3E50"/>
+  <!-- Left lapel -->
+  <path d="M70,130 L56,172 L80,158 Z" fill="#1A2B3C"/>
+  <!-- Right lapel -->
+  <path d="M90,130 L104,172 L80,158 Z" fill="#1A2B3C"/>
+  <!-- White shirt -->
+  <path d="M70,130 L80,158 L90,130 Q84,137 80,137 Q76,137 70,130 Z" fill="#F0F0F0"/>
+  <!-- Tie -->
+  <path d="M77,137 L83,137 L81.5,160 L80,163 L78.5,160 Z" fill="#8B1A1A"/>
+  <!-- Neck -->
+  <rect x="71" y="126" width="18" height="17" rx="3" fill="#FFCBA4"/>
+  <!-- Head -->
+  <ellipse cx="80" cy="85" rx="38" ry="44" fill="#FFCBA4"/>
+  <!-- Ears -->
+  <ellipse cx="42" cy="88" rx="6" ry="8" fill="#FFCBA4"/>
+  <ellipse cx="118" cy="88" rx="6" ry="8" fill="#FFCBA4"/>
+  <!-- White hair, combed back, slight receding -->
+  <path d="M46,78 C46,50 54,39 80,38 C106,39 114,50 114,78 C108,58 52,58 46,78 Z" fill="#D0D0D0"/>
+  <ellipse cx="46" cy="81" rx="7" ry="9" fill="#D0D0D0"/>
+  <ellipse cx="114" cy="81" rx="7" ry="9" fill="#D0D0D0"/>
+  <!-- Gray eyebrows -->
+  <path d="M56,74 Q65,70 73,72" stroke="#999" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M87,72 Q95,70 104,74" stroke="#999" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- Eyes -->
+  <ellipse cx="65" cy="83" rx="8" ry="5" fill="white"/>
+  <ellipse cx="95" cy="83" rx="8" ry="5" fill="white"/>
+  <circle cx="65" cy="84" r="4" fill="#2C2C2C"/>
+  <circle cx="95" cy="84" r="4" fill="#2C2C2C"/>
+  <circle cx="66.5" cy="82.5" r="1.5" fill="white"/>
+  <circle cx="96.5" cy="82.5" r="1.5" fill="white"/>
+  <!-- Glasses -->
+  <rect x="52" y="77" width="26" height="14" rx="5" fill="none" stroke="#555" stroke-width="2.2"/>
+  <rect x="82" y="77" width="26" height="14" rx="5" fill="none" stroke="#555" stroke-width="2.2"/>
+  <line x1="78" y1="84" x2="82" y2="84" stroke="#555" stroke-width="2"/>
+  <line x1="40" y1="83" x2="52" y2="83" stroke="#555" stroke-width="1.5"/>
+  <line x1="108" y1="83" x2="120" y2="83" stroke="#555" stroke-width="1.5"/>
+  <!-- Nose -->
+  <path d="M77,96 Q80,101 83,96" stroke="#D4A080" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <!-- Mouth -->
+  <path d="M70,108 Q80,115 90,108" stroke="#B06060" stroke-width="2" fill="none" stroke-linecap="round"/>
+</svg>

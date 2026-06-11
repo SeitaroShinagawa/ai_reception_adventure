@@ -31,15 +31,16 @@ function Game({ onRestart }: { onRestart: () => void }) {
     );
   }
 
-  const character = currentScene.characterId
-    ? characters[currentScene.characterId]
-    : undefined;
+  const characterId = currentScene.characterId;
+  const character = characterId ? characters[characterId] : undefined;
+  const gender = characterId ? gameState.characterGenders[characterId] : undefined;
 
   return (
     <>
       <SceneView
         scene={currentScene}
         character={character}
+        gender={gender}
         onChoose={chooseOption}
         score={gameState.score}
       />
