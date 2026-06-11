@@ -2,6 +2,7 @@
   "name": "ai_reception_adventure",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://seitaroshinagawa.github.io/ai_reception_adventure",
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
